@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" type="text/css" href="main.js">
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Life on the Spectrum</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+     
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a type="button" value="Enter Protected Area" onClick="passWord()" href="index.html">Home</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()" href="About.html">About</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()"href="PECS.html">PECS</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()"href="Sensory.html">Sensory</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()"href="Details.html">Details</a>
+    <a type="button" value="Enter Protected Area" onClick="passWord()"href="Contact.html">Contact</a>
+    
+</div>
+
+<div id="main">
+ 
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()" >&#9776; DETAILS</span>  
+   
+</div>
+
+        
+  
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "100px";
+  document.body.style.backgroundColor = "  #C8C6D7";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "";
+}
+    function passWord() {
+var testV = 1;
+var pass1 = prompt('Please Enter Your Password',' ');
+while (testV < 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1.toLowerCase() == "admin") {
+
+
+break;
+} 
+testV+=1;
+var pass1 = 
+prompt('Access Denied - Password Incorrect, Please Try Again.',);
+}
+if (pass1.toLowerCase()!="password" & testV ==3) 
+history.go(-1);
+return " ";
+} 
+</script>
+    </body>
+</html>

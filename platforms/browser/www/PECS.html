@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" type="text/css" href="main.js">
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Life on the Spectrum</title>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        
+           <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://code.jquery.com/jquery.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script>     $(document).ready(function() {
+    var $lightbox = $('#lightbox');
+    $('[data-target="#lightbox"]').on('click', function(event) {
+        var $img = $(this).find('img'), 
+            src = $img.attr('src'),
+            alt = $img.attr('alt'),
+            css = {
+                'maxWidth': $(window).width() - 100,
+                'maxHeight': $(window).height() - 100
+            };
+        $lightbox.find('img').attr('src', src);
+        $lightbox.find('img').attr('alt', alt);
+        $lightbox.find('img').css(css);
+    });
+    $lightbox.on('shown.bs.modal', function (e) {
+        var $img = $lightbox.find('img');
+        $lightbox.find('.modal-dialog').css({'width': $img.width()});
+        $lightbox.find('.close').removeClass('hidden');
+    });
+});
+        </script>
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />        
+        
+<style> 
+    body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s; 
+  background: #C8C6D7;
+}
+
+/** LIGHTBOX MARKUP **/
+
+.lightbox {
+	/** Default lightbox to hidden */
+	display: none;
+
+	/** Position and style */
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+}
+
+.lightbox img {
+	/** Pad the lightbox image */
+	max-width: 90%;
+	max-height: 80%;
+	margin-top: 2%;
+}
+
+.lightbox:target {
+	/** Remove default browser outline */
+	outline: none;
+
+	/** Unhide lightbox **/
+	display: block;
+}
+    
+
+</style>
+    </head>
+    <body>
+     
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a type="button" value="Enter Protected Area" onClick="passWord()" href="index.html">Home</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()" href="About.html">About</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()"href="PECS.html">PECS</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()"href="Sensory.html">Sensory</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()"href="Details.html">Details</a>
+    <a type="button" value="Enter Protected Area" onClick="passWord()"href="Contact.html">Contact</a>
+    
+</div>
+
+<div id="main">
+ 
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()" >&#9776; PECS</span>  
+     
+</div>
+        
+<form>
+  <input type="text" name="search" placeholder="Search..">
+</form>
+        
+  
+
+      <a href="#img1">
+  <img src="smartphone.jpg" class="thumbnail">
+</a>
+
+<!-- lightbox container hidden with CSS -->
+<a href="#_" class="lightbox" id="img1">
+  <img src="smartphone.jpg">  
+    
+    <audio controls >
+  
+  <source src="Yesiwant.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>  
+    
+
+</a>
+
+      
+        
+     
+
+      <a href="#img1">
+  <img src="smartphone.jpg" class="thumbnail">
+</a>
+
+<!-- lightbox container hidden with CSS -->
+<a href="#_" class="lightbox" id="img1">
+  <img src="smartphone.jpg">  
+    
+    <audio  >
+  
+  <source src="Yesiwant.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+  
+    
+
+</a>
+   
+        
+        
+        
+
+      <a href="#img1">
+  <img src="smartphone.jpg" class="thumbnail">
+</a>
+
+<!-- lightbox container hidden with CSS -->
+<a href="#_" class="lightbox" id="img1">
+  <img src="smartphone.jpg">  
+    <button >
+    <audio controls >
+  
+  <source src="Yesiwant.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+    YES I WANT 
+    </button> 
+
+</a>
+
+        
+        
+    
+
+      <a href="#img1">
+  <img src="smartphone.jpg" class="thumbnail">
+</a>
+
+<!-- lightbox container hidden with CSS -->
+<a href="#_" class="lightbox" id="img1">
+  <img src="smartphone.jpg">  
+    <button >
+    <audio controls  type="button">
+  
+  <source src="Yesiwant.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+    YES I WANT 
+    </button> 
+
+</a>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+<script> 
+   
+   
+    
+    
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "100px";
+  document.body.style.backgroundColor = "  #C8C6D7";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "";
+}
+    
+    
+    
+    function passWord() {
+var testV = 1;
+var pass1 = prompt('Please Enter Your Password',' ');
+while (testV < 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1.toLowerCase() == "admin") {
+
+
+break;
+} 
+testV+=1;
+var pass1 = 
+prompt('Access Denied - Password Incorrect, Please Try Again.',);
+}
+if (pass1.toLowerCase()!="password" & testV ==3) 
+history.go(-1);
+return " ";
+} 
+</script>
+    </body>
+</html>
