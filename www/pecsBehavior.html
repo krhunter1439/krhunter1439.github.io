@@ -77,14 +77,24 @@
 	display: block;
 }
     
-
+.img {
+    position: relative; 
+    margin-right: 2%; 
+    margin-bottom: 3%;
+    float: left;
+    width:  110px;
+    height: 110px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
 </style>
     </head>
     <body>
      
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a type="button" value="Enter Protected Area" onClick="passWord()" href="index.html">Home</a>
+      <a type="button" value="Enter Protected Area" onClick="passWord()" href="welcome.html">Home</a>
   <a type="button" value="Enter Protected Area" onClick="passWord()" href="About.html">About</a>
   <a type="button" value="Enter Protected Area" onClick="passWord()"href="PECS.html">PECS</a>
   <a type="button" value="Enter Protected Area" onClick="passWord()"href="Sensory.html">Sensory</a>
@@ -101,15 +111,14 @@
         
 <form>
   <input type="text" name="search" placeholder="Search..">
-</form>
+</form><!--Search Bar -->
+        
         
   
-
+<!-- start of images -->
       <a href="#img1">
-  <img src="PECSIMAGES/BEHAVIOR/calmdown.jpg" class="thumbnail">
+  <img src="PECSIMAGES/BEHAVIOR/calmdown.jpg" class="img">
 </a>
-
-<!-- lightbox container hidden with CSS -->
 <a href="#_" class="lightbox" id="img1">
     
     <div style="font-size:150%; text-color: black" > <img src="PECSIMAGES/BEHAVIOR/calmdown.jpg" > CALM DOWN</div>
@@ -122,17 +131,13 @@ Your browser does not support the audio element.
 </audio>  
     
 
-</a>
-
-      
+</a><!-- CALM DOWN -->
+    
+    
         
-     
-
       <a href="#img2">
-  <img src="PECSIMAGES/BEHAVIOR/bitingothers_c_l.jpg" class="thumbnail">
+  <img src="PECSIMAGES/BEHAVIOR/bitingothers_c_l.jpg" class="img">
 </a>
-
-<!-- lightbox container hidden with CSS -->
 <a href="#_" class="lightbox" id="img2">
     <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/bitingothers_c_l.jpg"> PLEASE DO NOT BITE </div>
     
@@ -143,62 +148,164 @@ Your browser does not support the audio element.
   
     
 
-</a>
-   
+</a><!-- Biting Others --> 
         
-        
-        
+          
 
-      <a href="#img1">
-  <img src="smartphone.jpg" class="thumbnail">
+   <a href="#img3">
+  <img src="PECSIMAGES/BEHAVIOR/checkschedule_c_l.jpg" class="img">
 </a>
-
-<!-- lightbox container hidden with CSS -->
-<a href="#_" class="lightbox" id="img1">
-  <img src="smartphone.jpg">  
-    <button >
+<a href="#_" class="lightbox" id="img3">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/checkschedule_c_l.jpg"> CHECK SCEDULE </div>
+    
     <audio controls >
-  
-  <source src="Yesiwant.mp3" type="audio/mpeg">
+  <source src="SOUNDS/BEHAVIOR/please-no-biting.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio> 
-    YES I WANT 
-    </button> 
-
-</a>
-
-        
-        
-    
-
-      <a href="#img1">
-  <img src="smartphone.jpg" class="thumbnail">
-</a>
-
-<!-- lightbox container hidden with CSS -->
-<a href="#_" class="lightbox" id="img1">
-  <img src="smartphone.jpg">  
-    <button >
-    <audio controls  type="button">
   
-  <source src="Yesiwant.mp3" type="audio/mpeg">
+</a><!-- Check Schedule --> 
+        
+        
+  <a href="#img4">
+  <img src="PECSIMAGES/BEHAVIOR/crying_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img4">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/crying_c_l.jpg"> CRYING </div>
+    
+    <audio controls >
+  <source src="SOUNDS/BEHAVIOR/crying.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio> 
-    YES I WANT 
-    </button> 
-
+  
+</a><!-- CRYUING -->       
+        
+        
+  <a href="#img5">
+  <img src="PECSIMAGES/BEHAVIOR/donot_c_l.jpg" class="img">
 </a>
+<a href="#_" class="lightbox" id="img5">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/donot_c_l.jpg"> DO NOT </div>
     
+    <audio controls >
+  <source src="SOUNDS/BEHAVIOR/please-do-not-do-that.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+  
+</a><!-- DO NOT -->         
         
-        
-        
-        
-        
-        
-        
-        
+  <a href="#img6">
+  <img src="PECSIMAGES/BEHAVIOR/hello_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img6">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/hello_c_l.jpg"> HELLO </div>
     
+    <audio controls >
+  <source src="SOUNDS/BEHAVIOR/hello.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+  
+</a><!-- HELLO -->         
+
+ <a href="#img7">
+  <img src="PECSIMAGES/BEHAVIOR/idontknow_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img7">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/idontknow_c_l.jpg"> I DONT KNOW </div>
+    
+    <audio controls >
+  <source src="SOUNDS/BEHAVIOR/i-dont-know.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+  
+</a><!-- I DONT KNOW -->  
         
+
+ <a href="#img8">
+  <img src="PECSIMAGES/BEHAVIOR/donttouch_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img8">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/donttouch_c_l.jpg"> DONT TOUCH </div>
+    
+    <audio controls >
+  <source src="SOUNDS/BEHAVIOR/dont-touch.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+  
+</a><!-- DONT TOUCH  -->  
+        
+
+ <a href="#img9">
+  <img src="PECSIMAGES/BEHAVIOR/kick_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img9">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/kick_c_l.jpg"> KICK </div>
+    
+    <audio controls >
+  <source src="SOUNDS/BEHAVIOR/please-do-not-kick.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+  
+</a><!-- KICKING -->  
+        
+        
+        
+ <a href="#img10">
+  <img src="PECSIMAGES/BEHAVIOR/listen_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img10">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/listen_c_l.jpg"> LISTEN </div>
+    
+    <audio controls >
+  <source src="SOUNDS/BEHAVIOR/please-listen.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+  
+</a><!-- LISTEN --> 
+        
+        
+ <a href="#img11">
+  <img src="PECSIMAGES/BEHAVIOR/my_turn_v1.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img11">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/my_turn_v1.jpg"> MY TURN </div>
+    
+    <audio controls >
+  <source src="SOUNDS/BEHAVIOR/its-my-turn-now.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+  
+</a><!-- MY TURN -->   
+        
+        
+        
+        
+        
+ <a href="#img12">
+  <img src="PECSIMAGES/BEHAVIOR/no_hitting_self_v1.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img12">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/no_hitting_self_v1.jpg"> NO HITTING SELF </div>
+    
+    <audio controls >
+  <source src="SOUNDS/BEHAVIOR/do-not-hit-yourself.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+  
+</a><!-- HITTING SELF-->   
+        
+        
+ <a href="#img15">
+  <img src="PECSIMAGES/BEHAVIOR/noyelling.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img15">
+    <div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BEHAVIOR/noyelling.jpg"> NO YELLING </div>
+    
+    <audio controls >
+  <source src="SOUNDS/BEHAVIOR/please-do-not-yell.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+  
+</a><!-- YELLING  -->  
 <script> 
    
    
@@ -217,26 +324,7 @@ function closeNav() {
 }
     
     
-    
-    function passWord() {
-var testV = 1;
-var pass1 = prompt('Please Enter Your Password',' ');
-while (testV < 3) {
-if (!pass1) 
-history.go(-1);
-if (pass1.toLowerCase() == "admin") {
 
-
-break;
-} 
-testV+=1;
-var pass1 = 
-prompt('Access Denied - Password Incorrect, Please Try Again.',);
-}
-if (pass1.toLowerCase()!="password" & testV ==3) 
-history.go(-1);
-return " ";
-} 
 </script>
     </body>
 </html>
