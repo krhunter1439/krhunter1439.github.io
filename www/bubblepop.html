@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" type="text/css" href="main.js">
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Life on the Spectrum</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <style>
+        :root {
+  --pop-duration: 0; /* set by javascript */
+  --pop-duration-secs: calc(var(--pop-duration) * 1s);
+  --tile-width: 64;
+  --tile-width-px: calc(var(--tile-width) * 1px);
+  --grid-gap: 4;
+  --grid-gap-px: calc(var(--grid-gap) * 1px);
+  --pop-width-px: calc(var(--tile-width-px) - (2* var(--grid-gap-px)));
+}
+body {
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#grid {
+  margin: var(--grid-gap-px) 0;
+  display: grid;
+  place-items: center center;
+  grid-row-gap: var(--grid-gap-px);
+  overflow: hidden;
+  background-color: rgba(180,180,230,0.1);
+}
+
+.bubble {
+  box-sizing: border-box;
+  width: var(--pop-width-px);
+  height: var(--pop-width-px);
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  border-width: calc(var(--tile-width-px) / 5);
+  border-color: rgba(180,180,230,0.2);
+  border-style: none;
+  box-shadow: 0px 5px 7px rgba(127,127,127,0.1), 0 5px 7px -4px white inset;
+  cursor: pointer;
+}
+
+.pop {
+  animation: press var(--pop-duration-secs) linear;
+  box-shadow: 0px 5px 7px rgba(127,127,127,0.3) inset, 0 5px 7px -4px white !important;
+}
+@keyframes press {
+  from {
+    background: #ff5050;
+    background: hsl(0, 100%, 50%);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    background: #ff5050;
+    background: hsl(0, 100%, 70%);
+    filter: hue-rotate(0deg);
+  }
+  30% {
+    background: yellow;
+    background: hsl(60, 100%, 80%);
+  }
+  to { 
+    background: #ff99cc;
+    background: hsl(330, 100%, 90%);
+    filter: hue-rotate(330deg);
+  }
+}
+
+.shift-row-left {
+  transform: translateX(calc(var(--tile-width-px) / -2 ));
+}
+
+.bubble:focus {
+  outline: none;
+}
+
+.title-screen {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: grid;
+  background: rgba(140,220,250,0.4);
+}
+h1.title {
+  text-align: center;
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 3px;
+  line-height: 5rem;
+  margin: 0;
+  padding: 2rem 4rem;
+  justify-self: center;
+  align-self: center;
+  background: rgba(255,255,255,0.6);
+  color: #26f;
+  border-radius: 50%;
+  border-left: 16px solid azure;
+  border-right: 16px solid mintcream;
+  border-bottom: 16px solid honeydew;
+  border-top: 16px solid ivory;
+  
+  
+}
+.hidden {
+  display: none;
+}
+    </style>
+    <body>
+     
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a type="button" value="Enter Protected Area" onClick="passWord()" href="welcome.html">Home</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()" href="About.html">About</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()"href="PECS.html">PECS</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()"href="Sensory.html">Sensory</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()"href="Details.html">Details</a>
+    <a type="button" value="Enter Protected Area" onClick="passWord()"href="Contact.html">Contact</a>
+    
+</div>
+
+<div id="main">
+ 
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()" >&#9776; SENSORY</span>  
+   
+   
+</div>
+    
+<div id="title-screen" class="title-screen">
+  <h1 class="title">Infinite<br/>BUBBLE<br/>WRAP</h1>
+</div>
+<div id="grid">  
+</div>
+        
+<script>
+    const titleScreen = document.getElementById('title-screen');
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    titleScreen.classList.add('hidden');
+  }, 2000)
+})
+
+bubbleWrap();
+function bubbleWrap() {
+  // console.log("window resized");
+
+  const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
+
+  // console.log(`${windowWidth} x ${windowHeight}`);
+
+  let numberTilesWide = 0;
+  let numberTilesTall = 0;
+
+  // set duration based on css variable
+  // const styleVars = getComputedStyle(document.body);
+  const styleVars = getComputedStyle(document.documentElement);
+  const tileSize = styleVars.getPropertyValue("--tile-width");
+  const gridGap = styleVars.getPropertyValue("--grid-gap");
+  // console.log(gridGap);
+
+  numberTilesWide = Math.floor(windowWidth / tileSize);
+  numberTilesTall = Math.floor(windowHeight / (tileSize - gridGap));
+
+  const totalTiles = numberTilesWide * numberTilesTall;
+
+  const grid = document.getElementById("grid");
+
+  // remove any buttons that already exist
+  while (grid.hasChildNodes()) {
+    grid.removeChild(grid.firstChild);
+  }
+
+  for (let i = 0; i < totalTiles; i += 1) {
+    const newButton = document.createElement("button");
+    newButton.classList.add('bubble');
+    grid.appendChild(newButton);
+  }
+  
+  // set css gridTemplateColumns property, eg. "1fr 1fr 1fr"
+  let gridWidthColumns = "";
+  for (let i = 0; i < numberTilesWide; i += 1) {
+    gridWidthColumns += "1fr ";
+  }
+  grid.style.gridTemplateColumns = gridWidthColumns;
+  // console.log(`${gridWidthColumns}`);
+  // console.log(`${totalTiles}, ${tileSize}`);
+
+  // BUBBLE CREATION
+  // set duration in ms based on 1/5 of total number of bubbles
+  const popDuration = Math.ceil(totalTiles / 5);
+  const popDurationMs = popDuration * 1000;
+  // console.log(popDuration); 
+  // set css variable 
+  document.documentElement.style.setProperty("--pop-duration", popDuration);
+  
+  const bubbles = document.getElementsByClassName("bubble");
+  
+  for (let i = 0, numBubbles = bubbles.length; i < numBubbles; i += 1) {
+    const pairsOfRows = 2 * numberTilesWide;
+    const greaterThanSecondRowFirst = i % pairsOfRows >= numberTilesWide;
+    const lessThanSecondRowLast = i % pairsOfRows < pairsOfRows;
+    
+    // Shift bubbles on odd rows by adding shift class
+    if ( greaterThanSecondRowFirst && lessThanSecondRowLast ) {
+      bubbles[i].classList.add("shift-row-left");
+    }
+    
+    bubbles[i].addEventListener('click', () => {
+      // check to see if bubble has not already been popped
+      if (!bubbles[i].getAttribute('popped')) {
+        // add data-attribute to bubble
+        bubbles[i].setAttribute('popped',true);
+        console.log(`Bubble ${i} popped!`);
+        // add css class containing the animation
+        bubbles[i].classList.add('pop');
+        setTimeout( () => {
+          // remove class & data-attribute when duration reached
+          bubbles[i].classList.remove('pop');
+          bubbles[i].removeAttribute(`popped`);
+          console.log(`Bubble ${i} reset`);
+        }, popDurationMs);
+      } else {
+        console.log(`Bubble ${i} already popped`);
+      }
+    });
+  }
+}
+
+// Rerender's new set of bubbles when window is resized
+window.addEventListener('resize', bubbleWrap);
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "100px";
+  document.body.style.backgroundColor = "  #C8C6D7";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "";
+}
+    
+</script>
+    </body>
+</html>

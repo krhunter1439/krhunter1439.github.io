@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="main.js">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Life on the Spectrum</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+       <!-- Bootstrap -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ <script src="https://code.jquery.com/jquery.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script>     $(document).ready(function() {
+var $lightbox = $('#lightbox');
+$('[data-target="#lightbox"]').on('click', function(event) {
+    var $img = $(this).find('img'), 
+        src = $img.attr('src'),
+        alt = $img.attr('alt'),
+        css = {
+            'maxWidth': $(window).width() - 100,
+            'maxHeight': $(window).height() - 100
+        };
+    $lightbox.find('img').attr('src', src);
+    $lightbox.find('img').attr('alt', alt);
+    $lightbox.find('img').css(css);
+});
+$lightbox.on('shown.bs.modal', function (e) {
+    var $img = $lightbox.find('img');
+    $lightbox.find('.modal-dialog').css({'width': $img.width()});
+    $lightbox.find('.close').removeClass('hidden');
+});
+});
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />        
+
+<style> 
+body {
+font-family: "Lato", sans-serif;
+transition: background-color .5s; 
+background: #C8C6D7;
+}
+
+/** LIGHTBOX MARKUP **/
+
+.lightbox {
+/** Default lightbox to hidden */
+display: none;
+
+/** Position and style */
+position: fixed;
+z-index: 999;
+width: 100%;
+height: 100%;
+text-align: center;
+top: 0;
+left: 0;
+background: rgba(0,0,0,0.8);
+}
+
+.lightbox img {
+/** Pad the lightbox image */
+max-width: 90%;
+max-height: 80%;
+margin-top: 2%;
+}
+
+.lightbox:target {
+/** Remove default browser outline */
+outline: none;
+
+/** Unhide lightbox **/
+display: block;
+} 
+
+
+
+.img {
+position: relative; 
+margin-right: 2%; 
+margin-bottom: 3%;
+float: left;
+width:  110px;
+height: 110px;
+background-position: 50% 50%;
+background-repeat:   no-repeat;
+background-size:     cover;
+} 
+
+
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a type="button" value="Enter Protected Area" onClick="passWord()" href="welcome.html">Home</a>
+<a type="button" value="Enter Protected Area" onClick="passWord()" href="About.html">About</a>
+<a type="button" value="Enter Protected Area" onClick="passWord()"href="PECS.html">PECS</a>
+<a type="button" value="Enter Protected Area" onClick="passWord()"href="Sensory.html">Sensory</a>
+<a type="button" value="Enter Protected Area" onClick="passWord()"href="Details.html">Details</a>
+<a type="button" value="Enter Protected Area" onClick="passWord()"href="Contact.html">Contact</a>
+
+</div>
+
+<div id="main">
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()" >&#9776; Body Parts </span>  
+
+</div>
+
+<form>
+<input type="text" name="search" placeholder="Search..">
+</form><!--Search Bar -->
+
+
+
+<!-- start of images --> 
+    <div>
+
+  <a href="#img1">
+
+       <img src="PECSIMAGES/BODYPARTS/arms_c_l.jpg" class="img" >   
+
+</a>
+
+
+<a href="#_" class="lightbox" id="img1">
+
+<div style="font-size:150%; text-color: black" > <img src="PECSIMAGES/BODYPARTS/arms_c_l.jpg" > ARMS</div>
+
+<audio controls  > 
+
+<source src="SOUNDS/BEHAVIOR/calm-down.mp3" type="audio/mpeg" > 
+
+Your browser does not support the audio element.
+</audio>  
+
+
+</a><!-- ARMS -->
+
+
+
+  <a href="#img2">
+<img src="PECSIMAGES/BODYPARTS/back_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img2">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/back_c_l.jpg"> BACK </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/please-no-biting.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+
+
+</a><!-- BACK --> 
+
+
+
+<a href="#img3">
+<img src="PECSIMAGES/BODYPARTS/earplugs_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img3">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/earplugs_c_l.jpg"> EARS </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/please-no-biting.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</a><!-- EARS --> 
+
+
+<a href="#img4">
+<img src="PECSIMAGES/BODYPARTS/eye_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img4">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/eye_c_l.jpg"> EYES </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/crying.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</a><!-- EYES -->       
+
+
+<a href="#img5">
+<img src="PECSIMAGES/BODYPARTS/foot_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img5">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/foot_c_l.jpg"> FOOT </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/please-do-not-do-that.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</a><!-- FOOT -->         
+
+<a href="#img6">
+<img src="PECSIMAGES/BODYPARTS/hair_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img6">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/hair_c_l.jpg"> HAIR </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/hello.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</a><!-- HAIR -->         
+
+<a href="#img7">
+<img src="PECSIMAGES/BODYPARTS/hand_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img7">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/hand_c_l.jpg"> HANDS </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/i-dont-know.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</a><!-- HAND -->  
+
+
+<a href="#img8">
+<img src="PECSIMAGES/BODYPARTS/head_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img8">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/head_c_l.jpg"> HEAD </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/dont-touch.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</a><!-- HEAD  -->  
+
+
+<a href="#img9">
+<img src="PECSIMAGES/BODYPARTS/legs_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img9">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/legs_c_l.jpg"> LEGS </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/please-do-not-kick.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</a><!-- LEGS -->  
+
+
+
+<a href="#img10">
+<img src="PECSIMAGES/BODYPARTS/mouth.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img10">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/mouth.jpg"> MOUTH </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/please-listen.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</a><!-- MOUTH --> 
+
+
+<a href="#img11">
+<img src="PECSIMAGES/BODYPARTS/nose_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img11">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/nose_c_l.jpg"> NOSE </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/its-my-turn-now.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</a><!-- NOSE -->   
+
+
+
+
+
+<a href="#img12">
+<img src="PECSIMAGES/BODYPARTS/stomach_c_l.jpg" class="img">
+</a>
+<a href="#_" class="lightbox" id="img12">
+<div style="font-size:150%; text-color: black"> <img src="PECSIMAGES/BODYPARTS/stomach_c_l.jpg"> STOMACH </div>
+
+<audio controls >
+<source src="SOUNDS/BEHAVIOR/do-not-hit-yourself.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+</a><!-- STOMACH  -->   
+    </div> 
+<button style="position: absolute; bottom: 2%; align: left; background-color: darkturquoise;   "  onclick="goBack()"> BACK </button>       
+
+
+
+
+
+<script> 
+function goBack() {
+window.history.back();
+} 
+
+
+
+function openNav() {
+document.getElementById("mySidenav").style.width = "250px";
+document.getElementById("main").style.marginLeft = "100px";
+document.body.style.backgroundColor = "  #C8C6D7";
+}
+
+function closeNav() {
+document.getElementById("mySidenav").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "";
+}
+
+
+
+</script>
+</body>
+</html>
