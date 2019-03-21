@@ -52,7 +52,19 @@ body {
 h1 {
     color: black;
     text-align: center;
-    font-family: 'Happy Monkey';font-size: 50px;
+    font-family: 'Happy Monkey';font-size: 30px;
     
 }
 
+h2 {
+    color: black;
+    text-align: justify;
+    font-family: 'Happy Monkey';font-size: 20px;
+    
+}
+p {
+    color: black;
+    text-align: center;
+    font-family: 'Happy Monkey';font-size: 15px;
+    
+}
