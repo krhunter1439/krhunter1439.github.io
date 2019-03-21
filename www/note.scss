@@ -1,0 +1,132 @@
+h2, #header {
+	font-size: 50px;
+  	font-size: 8.5vw;
+  	text-align: center;
+}
+body {
+	background-color :#EDEDED;
+}
+
+.notes {
+	#controls {
+		margin-bottom: 10px;
+	}
+	text-align: center;
+	.icon-doc-text {
+		&:hover {
+			cursor: pointer;
+			font-size: 37px !important;
+		}
+		font-size: 30px;
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		-ms-transition: all 0.3s ease;		
+	}	
+	ul#create-new-note {
+		text-align:center;
+		.medium.btn.primary {
+			&:hover{
+				 background-color:#219821;
+				 border-color:#219821
+			}
+			float: left;
+			height: 35px;
+			width: 100%;
+			top: -13px;
+			background-color: rgb(47, 194, 47);
+			border-color: rgb(47, 194, 47);
+			-webkit-transition:all  500ms;
+			-moz-transition:all  500ms;
+			-o-transition: all 500ms;
+			transition:all  500ms;				
+		}
+	}	
+	#notes-list {
+		li{
+			margin: 15px;
+			float: left;
+			position: relative;
+			width: 30%;
+			@media screen and (max-width: 900px) {
+				  width: 70%;	
+				  text-align: center;
+				  margin: 0 auto;
+				  float: none;
+				  position:relative;
+				  margin-bottom: 10px;
+			}
+			div {
+				.time {
+					font-size: 12px;
+				  	margin: 0;
+				  	padding: 10px;
+				  	padding-right:20px;
+				  	float: right;
+				  	color: black;
+				  	font-style:italic;
+				}
+				.note-title {
+					&:focus {
+
+				}
+					width: 90%;
+				  	height: 45px;
+				  	border: none;
+				  	resize: none;
+				  	font-size: 20px;
+  					padding: 10px;
+  					text-align: center;
+				}
+				.note-content {
+					&:focus {
+
+					}
+				  	width: 90%;
+				  	height: 202px;
+				  	resize: none;
+				 	border: none;
+				 	font-size: 16px;
+				}
+				display: block;
+			  	height: 329px;
+			  	-moz-transition: -moz-transform .15s linear;
+				-o-transition: -o-transform .15s linear;
+				-webkit-transition: -webkit-transform .15s linear;
+				text-align: center;
+				border-radius: 10px;
+			}
+			&:nth-child(1n) div {
+  				background-color: rgb(218, 218, 218);
+			}
+		}
+		span {
+			float: right;
+		}
+		i {
+			font-size: 12px;
+			float: right;
+			&:before {
+				margin: 0 3px;
+			}
+			&:hover {
+				cursor: pointer;
+			}
+			&.icon-pencil {
+				color: #f6b83f;
+			}
+			&.icon-cancel {
+				color: red;
+			}
+			&.icon-check {
+				position: absolute;
+				padding: 10px;
+				color:rgb(0, 182, 0);
+				padding-left:0px;
+			}
+		}
+		.text {
+			float: none;
+		}
+	}
+}
