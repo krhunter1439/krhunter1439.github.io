@@ -144,7 +144,7 @@ h1.title {
 window.addEventListener('load', () => {
   setTimeout(() => {
     titleScreen.classList.add('hidden');
-  }, 2000)
+  }, 500)
 })
 
 bubbleWrap();
@@ -235,7 +235,8 @@ function bubbleWrap() {
 }
 
 // Rerender's new set of bubbles when window is resized
-window.addEventListener('resize', bubbleWrap);
+window.addEventListener('resize', bubbleWrap); 
+
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";

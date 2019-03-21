@@ -48,4 +48,10 @@ body {
   .sidenav a {font-size: 18px;}
 }
 
+h1 {
+    color: black;
+    text-align: center;
+    font-family: 'Happy Monkey';font-size: 50px;
+    
+}
 
